@@ -1,5 +1,5 @@
-create database if not exists ${DB};
-use ${DB};
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists call_center;
 
@@ -37,9 +37,9 @@ create external table call_center(
 ,     cc_tax_percentage         double
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/call_center';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//call_center';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists catalog_page;
 
@@ -55,9 +55,9 @@ create external table catalog_page(
 ,     cp_type                   string
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/catalog_page';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//catalog_page';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists catalog_returns;
 
@@ -92,9 +92,9 @@ create external table catalog_returns
     cr_net_loss               double
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/catalog_returns';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//catalog_returns';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists catalog_sales;
 
@@ -136,9 +136,9 @@ create external table catalog_sales
     cs_net_profit             double
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/catalog_sales';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//catalog_sales';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists customer_address;
 
@@ -159,9 +159,9 @@ create external table customer_address
     ca_location_type          string
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/customer_address';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//customer_address';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists customer_demographics;
 
@@ -178,9 +178,9 @@ create external table customer_demographics
     cd_dep_college_count      int 
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/customer_demographics';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//customer_demographics';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists customer;
 
@@ -206,9 +206,9 @@ create external table customer
     c_last_review_date        string
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/customer';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//customer';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists date_dim;
 
@@ -244,9 +244,9 @@ create external table date_dim
     d_current_year            string 
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/date_dim';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//date_dim';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists household_demographics;
 
@@ -259,9 +259,9 @@ create external table household_demographics
     hd_vehicle_count          int
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/household_demographics';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//household_demographics';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists income_band;
 
@@ -271,9 +271,9 @@ create external table income_band(
 ,     ib_upper_bound            int
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/income_band';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//income_band';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists inventory;
 
@@ -285,9 +285,9 @@ create external table inventory
     inv_quantity_on_hand	int
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/inventory';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//inventory';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists item;
 
@@ -317,9 +317,9 @@ create external table item
     i_product_name            string
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/item';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//item';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists promotion;
 
@@ -346,9 +346,9 @@ create external table promotion
     p_discount_active         string 
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/promotion';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//promotion';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists reason;
 
@@ -358,9 +358,9 @@ create external table reason(
 ,     r_reason_desc             string                
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/reason';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//reason';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists ship_mode;
 
@@ -373,9 +373,9 @@ create external table ship_mode(
 ,     sm_contract               string                      
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/ship_mode';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//ship_mode';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists store_returns;
 
@@ -403,9 +403,9 @@ create external table store_returns
     sr_net_loss               double             
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/store_returns';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//store_returns';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists store_sales;
 
@@ -436,9 +436,9 @@ create external table store_sales
     ss_net_profit             double                  
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/store_sales';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//store_sales';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists store;
 
@@ -475,9 +475,9 @@ create external table store
     s_tax_precentage          double                  
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/store';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//store';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists time_dim;
 
@@ -495,9 +495,9 @@ create external table time_dim
     t_meal_time               string
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/time_dim';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//time_dim';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists warehouse;
 
@@ -518,9 +518,9 @@ create external table warehouse(
 ,     w_gmt_offset              double                  
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/warehouse';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//warehouse';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists web_page;
 
@@ -541,9 +541,9 @@ create external table web_page(
 ,     wp_max_ad_count           int
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/web_page';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//web_page';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists web_returns;
 
@@ -575,9 +575,9 @@ create external table web_returns
     wr_net_loss               double
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/web_returns';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//web_returns';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists web_sales;
 
@@ -619,9 +619,9 @@ create external table web_sales
     ws_net_profit             double
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/web_sales';
-create database if not exists ${DB};
-use ${DB};
+location 's3://dl-emr-poc/data//web_sales';
+create database if not exists tpc_ds;
+use tpc_ds;
 
 drop table if exists web_site;
 
@@ -655,4 +655,4 @@ create external table web_site
     web_tax_percentage    double
 )
 row format delimited fields terminated by '|' 
-location '${LOCATION}/web_site';
+location 's3://dl-emr-poc/data//web_site';
